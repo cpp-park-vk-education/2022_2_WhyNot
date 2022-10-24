@@ -14,4 +14,3 @@ endif ()
 enable_testing()
 
 add_subdirectory(Tests)
->>>>>>> Stashed changes
