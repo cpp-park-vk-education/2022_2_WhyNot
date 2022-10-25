@@ -1,14 +1,5 @@
-<<<<<<< Updated upstream
-cmake_minimum_required(VERSION 3.20)
-project(2022_2_WhyNot)
-
-set(CMAKE_CXX_STANDARD 17)
-
-add_executable(2022_2_WhyNot
-        main.cpp)
-=======
 cmake_minimum_required(VERSION 3.0)
-project(2022_2_WhyNot CXX)
+project(2022_2_WHYNOT CXX)
 
 option(BUILD_FOR_TEST "Build for test" OFF)
 
@@ -23,4 +14,3 @@ endif ()
 enable_testing()
 
 add_subdirectory(Tests)
->>>>>>> Stashed changes

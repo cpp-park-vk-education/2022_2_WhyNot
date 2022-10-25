@@ -1,4 +1,8 @@
-//
-// Created by grigo on 24.10.2022.
-//
+// Copyright 2022 WhyNot
 
+#include <gtest/gtest.h>
+
+int main() {
+    ::testing::InitGoogleTest();
+    return RUN_ALL_TESTS();
+}

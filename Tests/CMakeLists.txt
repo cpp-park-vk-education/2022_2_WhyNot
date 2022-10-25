@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(2022_2_WhyNot CXX)
+project(TEST CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 
