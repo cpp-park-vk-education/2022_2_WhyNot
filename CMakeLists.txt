@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
+
 project(2022_2_WHYNOT CXX)
 
 option(BUILD_FOR_TEST "Build for test" OFF)
