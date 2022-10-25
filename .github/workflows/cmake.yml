@@ -1,10 +1,10 @@
-name: CI
+name: Cmake
 
 on:
   push:
-    branches: [ "main", "dev/ci" ]
+    branches: [ "main", "workflow" ]
   pull_request:
-    branches: [ "main", "dev/ci" ]
+    branches: [ "main", "workflow" ]
 
 env:
   BUILD_TYPE: Debug
@@ -45,6 +45,7 @@ jobs:
           chmod 777 ./linters/linters.sh
           ./linters/linters.sh
           
+
   tests:
     needs: [ build-project ]
 
@@ -68,9 +69,10 @@ jobs:
       - name: Test
         run: |
           cd ${{ github.workspace }}/build/Tests/
-          chmod 777 TEST
-          ./TEST
+          chmod 777 test
+          ./test
           
+
   sanitisers:
     needs: [ build-project ]
 
@@ -90,7 +92,8 @@ jobs:
         run: |
           mkdir -p ${{ github.workspace }}/build
           mv ${{ github.workflow }}/build/* ${{ github.workspace }}/build
+
       - name: valgrind
         run: |
-          chmod 777 ${{github.workspace}}/build/Tests/TEST
-          valgrind --tool=memcheck --leak-check=yes ${{github.workspace}}/build/Tests/TEST
+          chmod 777 ${{github.workspace}}/build/Tests/test
+          valgrind --tool=memcheck --leak-check=yes ${{github.workspace}}/build/Tests/test
