@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ "main", "workflow" ]
+    branches: [ "main", "dev/ci" ]
   pull_request:
-    branches: [ "main", "workflow" ]
+    branches: [ "main", "dev/ci" ]
 
 env:
   BUILD_TYPE: Debug
@@ -69,8 +69,8 @@ jobs:
       - name: Test
         run: |
           cd ${{ github.workspace }}/build/Tests/
-          chmod 777 test
-          ./test
+          chmod 777 TEST
+          ./TEST
           
 
   sanitisers:
@@ -95,5 +95,5 @@ jobs:
 
       - name: valgrind
         run: |
-          chmod 777 ${{github.workspace}}/build/Tests/test
-          valgrind --tool=memcheck --leak-check=yes ${{github.workspace}}/build/Tests/test
+          chmod 777 ${{github.workspace}}/build/Tests/TEST
+          valgrind --tool=memcheck --leak-check=yes ${{github.workspace}}/build/Tests/TEST
