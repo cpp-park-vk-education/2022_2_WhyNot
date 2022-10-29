@@ -9,7 +9,8 @@ if (BUILD_FOR_TEST)
 endif ()
 
 
-file(GLOB SOURCES *.cpp)
+file(GLOB SOURCES 
+    test.cpp)
 
 find_package(GTest REQUIRED)
 
