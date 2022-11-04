@@ -3,7 +3,8 @@
 #include <gtest/gtest.h>
 
 TEST(Test, Equation) {
-    EXPECT_EQ(0, 0);
+    int x = 1;
+    EXPECT_EQ(x, 1);
 }
 
 int main() {
