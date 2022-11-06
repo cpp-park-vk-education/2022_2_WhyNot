@@ -4,7 +4,7 @@
 #include <algorithm>
 
 TEST(Test, Equation) {
-    int x = max(1, 2);
+    int x = std::max(1, 2);
     EXPECT_EQ(x, 2);
 }
 
