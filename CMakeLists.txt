@@ -17,7 +17,7 @@ set(SRCS
         src/Graph.cpp
 	src/room.cpp
 	src/server.cpp
-	src/lobby_player.cpp)
+	src/lobby_players.cpp)
 
 add_executable(${PROJECT_NAME} main.cpp
         ${SRCS}
