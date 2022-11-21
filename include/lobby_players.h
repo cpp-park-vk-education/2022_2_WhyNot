@@ -2,6 +2,7 @@
 #define SERVER_LOBBY_PLAYERS_H
 
 #include <string>
+#include <room.h>
 
 class LobbyPlayer {
     int id;
