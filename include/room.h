@@ -1,7 +1,7 @@
 #ifndef SERVER_ROOM_H
 #define SERVER_ROOM_H
 
-#include <string.h>
+#include <string>
 #include <stdlib.h>
 
 class Room {
