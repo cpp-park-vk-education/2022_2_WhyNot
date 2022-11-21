@@ -1,5 +1,5 @@
 #include "Object.h"
 
-Object::Object(enum class object_type_id){
+Object::Object(const object_type_id& type){
     
 }

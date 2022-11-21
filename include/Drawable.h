@@ -5,7 +5,7 @@ class Drawable {
 private:
     unsigned pos_x;
     unsigned pos_y;
-    string color;
+    std::string color;
 public:
     Drawable(unsigned, unsigned);
 };

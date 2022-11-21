@@ -6,7 +6,7 @@
 
 class Player : public Undestroyable {
 private:
-    string name;
+    std::string name;
     Graph function;
 public:
     Player(string);

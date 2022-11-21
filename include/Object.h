@@ -7,11 +7,11 @@
 
 class Object {
 private:
-    enum class Object_type_id type;
+    Object_type_id type;
     Graph function;
     Drawable* draw;
 public:
-    Object(enum class object_type_id);
+    Object(const object_type_id&);
 };
 
 #endif //OBJECT_H

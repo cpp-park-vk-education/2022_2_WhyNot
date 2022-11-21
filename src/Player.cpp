@@ -1,6 +1,6 @@
 #include "Player.h"
     
-Player::Player(string){
+Player::Player(std::string){
     
 }
 
