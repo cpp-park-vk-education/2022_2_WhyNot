@@ -9,6 +9,7 @@ private:
     unsigned pos_y;
     std::string color;
 public:
+    Drawable();
     Drawable(unsigned, unsigned);
 };
 
