@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ "main", "dev/ci" ]
+    branches: [ "main", "dev/ci-(vlad)" ]
   pull_request:
-    branches: [ "main", "dev/ci" ]
+    branches: [ "main", "dev/ci-(vlad)" ]
 
 env:
   BUILD_TYPE: Debug
