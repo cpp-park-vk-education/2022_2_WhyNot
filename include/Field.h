@@ -11,7 +11,7 @@ private:
     unsigned width;
     unsigned height;
 public:
-    void Field(unsigned, unsigned);
+    Field(unsigned, unsigned);
     void Move(int);
 };
 
