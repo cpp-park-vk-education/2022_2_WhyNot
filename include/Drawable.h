@@ -1,6 +1,8 @@
 #ifndef DRAWABLE_H
 #define DRAWABLE_H
 
+#include <string>
+
 class Drawable {
 private:
     unsigned pos_x;

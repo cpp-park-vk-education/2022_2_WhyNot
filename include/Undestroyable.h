@@ -5,6 +5,7 @@
 
 class Undestroyable : public Drawable{
 public:
+    Undestroyable();
     Undestroyable(unsigned, unsigned);
 };
 

@@ -11,7 +11,7 @@ private:
     Graph function;
     Drawable* draw;
 public:
-    Object(const object_type_id&);
+    Object(const Object_type_id&);
 };
 
 #endif //OBJECT_H

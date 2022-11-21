@@ -9,7 +9,7 @@ private:
     std::string name;
     Graph function;
 public:
-    Player(string);
+    Player(std::string);
     void MakeMove();
 };
 
