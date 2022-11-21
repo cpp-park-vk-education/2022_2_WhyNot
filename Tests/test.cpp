@@ -1,9 +1,11 @@
 // Copyright 2022 WhyNot
 
 #include <gtest/gtest.h>
+#include <algorithm>
 
 TEST(Test, Equation) {
-    EXPECT_EQ(0, 0);
+    int x = std::max(1, 2);
+    EXPECT_EQ(x, 2);
 }
 
 int main() {
