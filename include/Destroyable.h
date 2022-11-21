@@ -1,7 +1,7 @@
 #ifndef DESTROYABLE_H
 #define DESTROYABLE_H
 
-#include "Drowable.h"
+#include "Drawable.h"
 
 class Destroyable : public Drawable{
 public:
