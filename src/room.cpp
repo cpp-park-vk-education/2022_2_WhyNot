@@ -1,4 +1,4 @@
-#include "include/room.h"
+#include "room.h"
 
 void Room::updateNum(int num) {
     numPlayers = num;
