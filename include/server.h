@@ -9,10 +9,7 @@ class Server {
     std::list<LobbyPlayer> players;
     std::list<Room> rooms;
 public:
-    Server() {
-        players = new list<LobbyPlayer>;
-        rooms = new list<Room>;
-    }
+    Server() {}
 };
 
 #endif //SERVER_SERVER_H

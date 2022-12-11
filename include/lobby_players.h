@@ -1,7 +1,8 @@
 #ifndef SERVER_LOBBY_PLAYERS_H
 #define SERVER_LOBBY_PLAYERS_H
 
-#include <string.h>
+#include <string>
+#include <room.h>
 
 class LobbyPlayer {
     int id;

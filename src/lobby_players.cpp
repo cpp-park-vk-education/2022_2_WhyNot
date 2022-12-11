@@ -1,4 +1,4 @@
-#include "include/lobby_players.h"
+#include "lobby_players.h"
 
 int LobbyPlayer::getId() {
     return id;
