@@ -1,6 +1,9 @@
 #include <iostream>
+#include "include/server.h"
+#include "include/client.h"
 
 int main() {
-    std::cout << "TRUE";
+    serverStart();
+    connectClient();
     return 0;
 }

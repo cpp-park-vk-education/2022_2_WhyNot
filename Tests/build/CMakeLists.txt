@@ -13,12 +13,9 @@ endif ()
 include_directories("..include/")
 
 set(SRCS
-        src/MathExpression.cpp
-        src/MathCalculator.cpp
-        src/MathChecker.cpp
-        src/MathParser.cpp
-        src/MathConverter.cpp
-        src/Graph.cpp)
+        src/room.cpp
+        src/server.cpp
+        src/lobby_players.cpp)
 
 file(GLOB SOURCES
         test.cpp

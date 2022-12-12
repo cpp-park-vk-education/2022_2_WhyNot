@@ -8,17 +8,20 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include_directories("include/")
 
+link_libraries(ws2_32 wsock32)
+
 set(SRCS
-	src/room.cpp
-	src/server.cpp
-	src/lobby_players.cpp)
+        src/room.cpp
+        src/server.cpp
+        src/lobby_players.cpp
+        src/client.cpp)
 
 add_executable(${PROJECT_NAME} main.cpp
         ${SRCS}
         )
 
 if (BUILD_FOR_TEST)
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -coverage -lgcov" )
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -coverage -lgcov")
 endif ()
 
 enable_testing()

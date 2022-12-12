@@ -2,7 +2,7 @@
 #define SERVER_ROOM_H
 
 #include <string>
-#include <stdlib.h>
+#include <cstdlib>
 
 class Room {
     std::string name;
