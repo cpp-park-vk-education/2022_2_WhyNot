@@ -1,3 +1,3 @@
-Math part
+Logic part
 
-Author : Klimentyev Vladislav
+Author : Aleksandr Dudin
