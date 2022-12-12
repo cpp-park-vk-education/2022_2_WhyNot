@@ -1,23 +1,23 @@
 #ifndef MATHEXPRESSION_H
 #define MATHEXPRESSION_H
 
+#include "MathChecker.h"
+#include "MathParser.h"
 #include <map>
-#include <string>
-#include <list>
+#include <iostream>
 
 class MathExpression {
 private:
     std::string initial;
-    std::string postfix;
-    std::map<double, std::string> parameters;
+    std::list<std::string> token_list;
 public:
     MathExpression() = default;
 
-    void SetExpression(const std::string &);
+    bool SetExpression(const std::string &str);
 
-    void SetParameters();
+    std::string GetInitial();
 
-    std::string GetExpression();
+    std::list<std::string> GetPostfix();
 };
 
 

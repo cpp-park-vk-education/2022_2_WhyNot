@@ -2,14 +2,16 @@
 #define MATHCALCULATOR_H
 
 #include "MathExpression.h"
+#include <cmath>
 
 class MathCalculator {
 private:
-    MathExpression expression;
+    std::vector<std::string> list;
+    MathChecker checker;
 public:
     MathCalculator() = default;
 
-    explicit MathCalculator(const MathExpression &);
+    explicit MathCalculator(MathExpression);
 
     double Calculate(double);
 };

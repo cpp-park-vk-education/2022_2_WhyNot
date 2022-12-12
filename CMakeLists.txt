@@ -13,7 +13,6 @@ set(SRCS
         src/MathCalculator.cpp
         src/MathChecker.cpp
         src/MathParser.cpp
-        src/MathConverter.cpp
         src/Graph.cpp)
 
 add_executable(${PROJECT_NAME} main.cpp

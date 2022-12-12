@@ -1,6 +1,8 @@
-#include <iostream>
+#include "Graph.h"
 
 int main() {
-    std::cout << "TRUE";
+    Graph graph;
+    graph.Input();
+    graph.Evaluate();
     return 0;
 }

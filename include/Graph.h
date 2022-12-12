@@ -8,15 +8,13 @@ class Graph {
 private:
     std::string color;
     std::vector <std::pair<double, double>> valueTable;
-    MathExpression expression;
+    MathCalculator calculator;
 public:
     Graph() = default;
 
-    Graph(const MathExpression&, const std::string&);
-
     void Evaluate();
 
-    void UpdateExpression(const std::string&);
+    void Input();
 };
 
 
