@@ -23,7 +23,11 @@ bool MathParser::Parse(const std::string &str) {
             do {
                 temp += str[i++];
             } while (str[i] >= 'a' and str[i] <= 'z');
-            st.push(temp);
+            if (temp.length() == 1) {
+                token_list.push_back(temp);
+            } else {
+                st.push(temp);
+            }
             --i;
         } else if (str[i] >= '0' and str[i] <= '9') {
             if (str[i] == '0') {

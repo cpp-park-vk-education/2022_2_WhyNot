@@ -1,9 +1,12 @@
 #include "Graph.h"
 
 void Graph::Evaluate() {
-    for (int i = 0; i < 100; ++i) {
+    double i = -25;
+    while (i < (double)25) {
         valueTable.emplace_back(i, calculator.Calculate(i));
+        i += 0.05;
     }
+    return;
 }
 
 void Graph::Input() {

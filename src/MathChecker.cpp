@@ -19,10 +19,10 @@ bool MathChecker::areMissedOperandsOrOperations() {
         }
         if (temp == "operand" or temp == "constant") {
             ++operand_count;
-        } else if (temp == "function" and operand_count == 1) {
-            operand_count = 0;
-        } else if (temp == "operation" and operand_count == 2) {
-            operand_count = 0;
+        } else if (temp == "function" and operand_count >= 1) {
+            ;
+        } else if (temp == "operation" and operand_count >= 2) {
+            operand_count -= 1;
         } else {
             return true;
         }
