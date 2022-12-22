@@ -94,7 +94,22 @@ double MathCalculator::Calculate(double x) {
                 token_list.insert(token_list.begin(), std::to_string(pow(operand1, operand2)));
             }
             i = 0;
+        } else if (temp == "constant") {
+            double operand1;
+            switch (token_list[i][0]) {
+                case 'x':
+                    operand1 = x;
+                    break;
+                case 'e':
+                    operand1 = M_E;
+                    break;
+                case 'p':
+                    operand1 = M_PI;
+                    break;
+            }
+            token_list.erase(token_list.begin(), token_list.begin() + 1);
+            token_list.insert(token_list.begin(), std::to_string(operand1));
         }
+        return std::stof(token_list[0]);
     }
-    return std::stof(token_list[0]);
 }
