@@ -13,7 +13,7 @@ void Graph::Input() {
     std::string temp;
     MathExpression expression;
     while (!expression.SetExpression(temp)) {
-        std::cin >> temp;
+        getline(std::cin, temp);
     }
     calculator = MathCalculator(expression);
 }

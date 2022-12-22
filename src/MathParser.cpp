@@ -19,6 +19,9 @@ bool MathParser::Parse(const std::string &str) {
     std::stack<std::string> st;
     for (int i = 0; i < str.length(); ++i) {
         std::string temp;
+        if (str[i] == ' ') {
+            continue;
+        }
         if (str[i] >= 'a' and str[i] <= 'z') {
             do {
                 temp += str[i++];
