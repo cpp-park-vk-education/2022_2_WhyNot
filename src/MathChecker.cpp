@@ -19,8 +19,7 @@ bool MathChecker::areMissedOperandsOrOperations() {
         }
         if (temp == "operand" or temp == "constant") {
             ++operand_count;
-        } else if (temp == "function" and operand_count >= 1) {
-            ;
+        } else if (temp == "function" and operand_count >= 1) { ;
         } else if (temp == "operation" and operand_count >= 2) {
             operand_count -= 1;
         } else {
@@ -43,17 +42,21 @@ bool MathChecker::isTokenCorrect(const std::string &str) {
     if (str[0] == ' ') {
         std::cout << "space\n";
     }*/
-    return (std::find(operationsList.begin(), operationsList.end(), str) != operationsList.end())
-           or (std::find(functionsList.begin(), functionsList.end(), str) != functionsList.end())
-           or (std::find(constantsList.begin(), constantsList.end(), str) != constantsList.end())
-           or (std::all_of(str.begin(),
-                           str.end(),
-                           ::isdigit)) or str[0] == ' ';
+    auto temp = str;
+    if (temp[0] == '-') {
+        temp.erase(temp.begin(), temp.begin() + 1);
+    }
+    return (std::find(operationsList.begin(), operationsList.end(), temp) != operationsList.end())
+           or (std::find(functionsList.begin(), functionsList.end(), temp) != functionsList.end())
+           or (std::find(constantsList.begin(), constantsList.end(), temp) != constantsList.end())
+           or (std::all_of(temp.begin(),
+                           temp.end(),
+                           ::isdigit)) or temp[0] == ' ';
 }
 
 MathChecker::MathChecker(std::list<std::string> list) : token_list(std::move(list)) {
     operationsList = {"+", "-", "*", "/", "^"};
-    functionsList = {"sin", "cos", "tg", "ctg", "sqrt"};
+    functionsList = {"sin", "cos", "tg", "ctg", "sqrt", "abs", "ln"};
     constantsList = {"e", "x", "pi"};
 }
 
@@ -66,13 +69,17 @@ std::string MathChecker::Convert() {
 }
 
 std::string MathChecker::whatToken(const std::string &str) {
-    if (std::find(operationsList.begin(), operationsList.end(), str) != operationsList.end()) {
+    auto temp = str;
+    if (str[0] == '-' and str != "-") {
+        temp.erase(temp.begin(), temp.begin() + 1);
+    }
+    if (std::find(operationsList.begin(), operationsList.end(), temp) != operationsList.end()) {
         return "operation";
-    } else if (std::find(functionsList.begin(), functionsList.end(), str) != functionsList.end()) {
+    } else if (std::find(functionsList.begin(), functionsList.end(), temp) != functionsList.end()) {
         return "function";
-    } else if (std::find(constantsList.begin(), constantsList.end(), str) != constantsList.end()) {
+    } else if (std::find(constantsList.begin(), constantsList.end(), temp) != constantsList.end()) {
         return "constant";
-    } else if (str == " ") {
+    } else if (temp == " ") {
         return "space";
     } else {
         return "operand";

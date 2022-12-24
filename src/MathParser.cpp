@@ -19,10 +19,14 @@ bool MathParser::Parse(const std::string &str) {
     std::stack<std::string> st;
     for (int i = 0; i < str.length(); ++i) {
         std::string temp;
-        if (str[i] == ' ') {
+        /*if (str[i] == ' ') {
             continue;
-        }
-        if (str[i] >= 'a' and str[i] <= 'z') {
+        }*/
+        if ((str[i] >= 'a' and str[i] <= 'z') or (str[i] == '-' and str[i + 1] >= 'a' and str[i + 1] <= 'z' and (i == 0 or (str[i - 1] != ')' and (str[i - 1] < 'a' or str[i - 1] > 'z'))))) {
+            if (str[i] == '-') {
+                temp += '-';
+                ++i;
+            }
             do {
                 temp += str[i++];
             } while (str[i] >= 'a' and str[i] <= 'z');
@@ -32,7 +36,11 @@ bool MathParser::Parse(const std::string &str) {
                 st.push(temp);
             }
             --i;
-        } else if (str[i] >= '0' and str[i] <= '9') {
+        } else if ((str[i] >= '0' and str[i] <= '9') or (str[i] == '-' and str[i + 1] >= '1' and str[i + 1] <= '9' and (i == 0 or (str[i - 1] != ')' and (str[i - 1] < '0' or str[i - 1] > '9'))))) {
+            if (str[i] == '-') {
+                temp += '-';
+                ++i;
+            }
             if (str[i] == '0') {
                 temp += str[i++];
                 if (str[i] >= '0' and str[i] <= '9') {
